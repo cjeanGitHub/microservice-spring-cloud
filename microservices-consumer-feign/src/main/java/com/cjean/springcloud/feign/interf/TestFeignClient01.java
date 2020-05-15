@@ -8,11 +8,11 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 /**
  * 功能描述: <br>
-         测试从服务提供者获取的服务
+         测试从ribbon获取的服务
  */
 
-@FeignClient(name="service-provider")
-public interface TestFeignClient {
-    @RequestMapping(value = "/test/{id}",method = RequestMethod.GET)
+@FeignClient(name="eureka-ribbon")
+public interface TestFeignClient01 {
+    @RequestMapping(value = "/methodOfribbon/{id}",method = RequestMethod.GET)
     public String test(@PathVariable("id") String id);
 }
